@@ -1,1 +1,39 @@
+import java.util.Scanner;
 
+class BankAccount{
+    private String accountName;
+    private int aNumber;
+    private double balance;
+    
+    public BankAccount(String accountName,int aNumber,double balance){
+        this.accountName = accountName;
+        this.aNumber = aNumber;
+        this.balance = balance;
+    }
+    
+    public double getBalance(){
+        return balance;
+    }
+    
+    public void display(){
+        System.out.println("Account name :"+accountName);
+        System.out.println("Account Number :"+aNumber);
+        System.out.println("Account Balance :"+balance);
+    }
+}
+
+class Main{
+    public static void main(String[]args){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Create Your Account :");
+        System.out.print("Name :");
+        String n = input.nextLine();
+        System.out.print("Account Number :");
+        int num = input.nextInt();
+        System.out.print("Balance :");
+        double bal = input.nextDouble();
+        
+        BankAccount obj = new BankAccount(n,num,bal);
+        obj.display();
+    }
+}
